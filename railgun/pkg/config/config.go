@@ -3,6 +3,7 @@ package config
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/kong/go-kong/kong"
 	"github.com/kong/kubernetes-ingress-controller/pkg/adminapi"
@@ -37,6 +38,7 @@ type Config struct {
 	KongWorkspace      string
 	AnonymousReports   bool
 	EnableReverseSync  bool
+	SyncPeriod         time.Duration
 
 	// Kong Proxy configurations
 	APIServerHost            string
@@ -112,6 +114,7 @@ func (c *Config) FlagSet() *pflag.FlagSet {
 	flagSet.StringVar(&c.KongWorkspace, "kong-workspace", "", "Kong Enterprise workspace to configure. Leave this empty if not using Kong workspaces.")
 	flagSet.BoolVar(&c.AnonymousReports, "anonymous-reports", true, `Send anonymized usage data to help improve Kong`)
 	flagSet.BoolVar(&c.EnableReverseSync, "enable-reverse-sync", false, `Send configuration to Kong even if the configuration checksum has not changed since previous update.`)
+	flagSet.DurationVar(&c.SyncPeriod, "sync-period", time.Minute*10, `Relist and confirm cloud resources this often`) // NOTE: 10m inherited from semi-arbitrary V1 setting.
 
 	// Kong Proxy and Proxy Cache configurations
 	flagSet.StringVar(&c.APIServerHost, "apiserver-host", "", `The Kubernetes API server URL. If not set, the controller will use cluster config discovery.`)
