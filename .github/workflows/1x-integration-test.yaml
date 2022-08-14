@@ -58,7 +58,7 @@ jobs:
 
     - run: docker save local/kong-ingress-controller:ci > image.tar
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: image
         path: image.tar
