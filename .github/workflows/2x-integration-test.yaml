@@ -28,7 +28,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-build-codegen-
     - name: checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.1.0
     - name: run railgun integration tests
       run: make test.integration.dbless
       working-directory: ./railgun
@@ -53,7 +53,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-build-codegen-
     - name: checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.1.0
     - name: run railgun integration tests
       run: make test.integration.postgres
       working-directory: ./railgun

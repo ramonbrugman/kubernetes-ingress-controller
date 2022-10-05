@@ -29,7 +29,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-build-codegen-
     - name: checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.1.0
     - name: run railgun integration tests on legacy KIC
       run: make test.integration.legacy
       working-directory: ./railgun
@@ -50,7 +50,7 @@ jobs:
           ${{ runner.os }}-build-codegen-
 
     - name: 'Check out the repo'
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.1.0
 
     - name: 'make container'
       run: |
@@ -70,7 +70,7 @@ jobs:
       KUBE_VERSION: v1.20.2
     steps:
     - name: 'Arrange: Check out the repo'
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.1.0
 
     - uses: actions/download-artifact@v2
       with:
