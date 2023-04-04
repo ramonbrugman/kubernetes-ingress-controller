@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/blang/semver/v4 v4.0.0
 	github.com/bombsimon/logrusr v1.1.0
-	github.com/docker/docker v20.10.5+incompatible // indirect
+	github.com/docker/docker v20.10.24+incompatible // indirect
 	github.com/eapache/channels v1.1.0
 	github.com/fatih/color v1.12.0
 	github.com/ghodss/yaml v1.0.0
@@ -41,7 +41,6 @@ require (
 	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d // indirect
 	golang.org/x/text v0.3.5 // indirect
 	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba // indirect
-	google.golang.org/grpc v1.36.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/pool.v3 v3.1.1
 	gopkg.in/ini.v1 v1.62.0 // indirect
